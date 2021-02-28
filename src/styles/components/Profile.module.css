@@ -9,7 +9,8 @@
     border-radius: 50%;
 }
 
-.profileContainer div {
+.profileContainer > div {
+    width: 20rem;
     margin-left: 1.5rem;
 }
 
@@ -22,6 +23,21 @@
 .profileContainer div p{
     font-size: 1rem;
     margin-top: 0.5rem;
+}
+
+.profileContainer div div {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileContainer div div button {
+    color:brown;
+    border: 0;
+}
+
+.username {
+    margin-left: 1.2rem;
 }
 
 .profileContainer div img{

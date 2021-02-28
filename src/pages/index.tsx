@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { CompleteChallengs } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
 import { ExperienceBar } from "../components/ExperienceBar";
@@ -10,7 +11,6 @@ import { GetServerSideProps } from "next"
 import styles from '../styles/pages/Home.module.css';
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
-import { prependOnceListener } from "process";
 
 interface HomeProps {
   level: number;
@@ -27,7 +27,7 @@ export default function Home(props: HomeProps) {
     >
       <div className={styles.container}> 
         <Head>
-          <title>Início | Moveit</title>
+          <title>Início | MoveWe</title>
         </Head>
         <ExperienceBar />
 
@@ -51,13 +51,21 @@ export default function Home(props: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
+  const { level, currentExperience, challengesCompleted, user } = ctx.req.cookies;
 
+  if (user == undefined) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/login',
+      },
+    }
+  }
   return {
     props: {
-      level:  Number(level),
+      level: Number(level),
       currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
+      challengesCompleted: Number(challengesCompleted),
     }
   }
 }

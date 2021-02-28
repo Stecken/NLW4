@@ -1,11 +1,14 @@
+import React from "react";
+import { AuthProvider } from "../contexts/AuthContext";
 import '../styles/global.css'
 
-import { ChallengesContext, ChallengesProvider } from '../contexts/ChallengesContext';
+function App({ Component, pageProps }) {
 
-function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <AuthProvider>
+      <Component {...pageProps}/>
+    </AuthProvider>
   )
 }
 
-export default MyApp
+export default App

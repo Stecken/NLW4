@@ -1,0 +1,106 @@
+.authContainer {
+    padding: 4rem 10rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.authContainer h1 {
+    color: var(--title);
+}
+
+.authContainer > div {
+    margin-top: 5rem;
+    color: var(--text);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.authContainer > div > div {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    pointer-events: none;
+}
+
+.authContainer > div > div > p {
+    pointer-events: none;
+}
+
+.contentButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentButton > p {
+    margin-right: 1.5rem;
+}
+
+.iconeGit{
+    outline: none;
+    font-size: 2.5rem;
+    color: rgb(66, 66, 66);
+    margin: 0 1rem;
+    pointer-events: none;
+}
+
+.containerButton {
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+.containerButton > input {
+    background: transparent;
+    border:none;
+    padding-left:1.3rem;
+    padding-right:1.3rem;
+    color: black;
+    opacity: 0.5;
+    outline: var(--blue);
+    flex: 1;
+    width: 100%;
+}
+
+.containerButton button {
+    background: transparent;
+    border: 0;
+    font-size: 0;
+    width: 3rem;
+    height: 100%;
+    border-left: 1px black solid;
+    background: rgba(66, 66, 66, 0.226);
+    transition: background .3s linear;
+}
+
+.containerButton button:hover{
+    background: rgba(10, 10, 10, 0.466);
+}
+
+.iconeEntrar {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    width: auto;
+    height: auto;
+}
+
+@media(max-width: 630px){
+    .authContainer h1{
+        text-align: center;
+    }
+}
+
