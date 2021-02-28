@@ -99,6 +99,10 @@
 }
 
 @media(max-width: 630px){
+    .authContainer {
+        padding: 4rem 3rem 10rem;
+    }
+
     .authContainer h1{
         text-align: center;
     }
